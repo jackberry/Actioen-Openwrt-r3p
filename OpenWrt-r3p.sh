@@ -21,7 +21,7 @@ git clone https://github.com/kang-mk/luci-app-smartinfo package/luci-app-smartin
 
 
 
-#创建自定义配置文件 - OpenWrt-x86-64
+#创建自定义配置文件 - OpenWrt-r3p
 
 rm -f ./.config*
 touch ./.config
