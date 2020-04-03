@@ -104,7 +104,6 @@ CONFIG_PACKAGE_kmod-usb-ohci-pci=y
 CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb2-pci=y
 CONFIG_PACKAGE_kmod-usb3=y
-CONFIG_PACKAGE_kmod-usb-printer=y
 EOF
 
 # 第三方插件选择:
@@ -157,7 +156,6 @@ CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-airplay2=y
-CONFIG_PACKAGE_luci-app-usb-printer=y
 EOF
 
 # LuCI主题:
