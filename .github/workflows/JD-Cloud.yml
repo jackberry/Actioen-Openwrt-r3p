@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: OpenWrt-r3p
+name: OpenWrt-JDY
 
 on:
 # 定时触发
@@ -38,7 +38,7 @@ on:
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  DIY_SH: OpenWrt-r3p.sh
+  DIY_SH: OpenWrt-JDY.sh
   FREE_UP_DISK: false
   SSH_ACTIONS: false
   UPLOAD_BIN_DIR: true
@@ -82,7 +82,7 @@ jobs:
     - name: 安装源
       run: cd openwrt && ./scripts/feeds install -a
 
-    - name: 创建自定义配置文件 - OpenWrt-r3p
+    - name: 创建自定义配置文件 - OpenWrt-JDY
       run: |
         [ -e files ] && mv files openwrt/files
         chmod +x $DIY_SH
