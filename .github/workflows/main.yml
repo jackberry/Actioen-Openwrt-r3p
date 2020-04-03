@@ -9,12 +9,23 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.repository.owner.id == github.event.sender.id
 
- - name: Envirment
-        env:
+    steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Initialization environment
+      env:
           DEBIAN_FRONTEND: noninteractive
-        run: |
+      run: |
           docker rmi $(docker images -q)
+          sudo swapoff /swapfile
+          sudo rm -rf /swapfile /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php*
           sudo -E apt-get update -y
           sudo -E apt-get autoremove -y --purge
