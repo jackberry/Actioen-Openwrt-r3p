@@ -104,6 +104,7 @@ CONFIG_PACKAGE_kmod-usb-ohci-pci=y
 CONFIG_PACKAGE_kmod-usb2=y
 CONFIG_PACKAGE_kmod-usb2-pci=y
 CONFIG_PACKAGE_kmod-usb3=y
+CONFIG_PACKAGE_kmod-usb-printer=y
 EOF
 
 # 第三方插件选择:
@@ -114,27 +115,38 @@ CONFIG_PACKAGE_luci-app-adguardhome=y
 EOF
 
 # ShadowsocksR插件:
-# cat >> .config <<EOF
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-# CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-# EOF
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-ssr-plus=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray_plugin=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Redsocks2=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+EOF
+
+#解锁网易云灰色歌曲
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-unblockmusic=y
+CONFIG_UnblockNeteaseMusic_Go=y
+EOF
 
 # 常用LuCI插件选择:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
 # CONFIG_PACKAGE_luci-app-transmission is not set
-CONFIG_PACKAGE_luci-app-qbittorrent is not set
+CONFIG_PACKAGE_luci-app-qbittorrent=y
 # CONFIG_PACKAGE_luci-app-xlnetacc is not set
-CONFIG_PACKAGE_luci-app-zerotier is not set
-CONFIG_PACKAGE_luci-app-v2ray-server is not set
+CONFIG_PACKAGE_luci-app-zerotier=y
+CONFIG_PACKAGE_luci-app-v2ray-server=y
 # CONFIG_PACKAGE_luci-app-pptp-server is not set
 CONFIG_PACKAGE_luci-app-ipsec-vpnd=y
 CONFIG_PACKAGE_luci-app-openvpn=y
 CONFIG_PACKAGE_luci-app-openvpn-server=y
 CONFIG_PACKAGE_luci-app-adbyby-plus=y
-CONFIG_PACKAGE_luci-app-softethervpn=y
+CONFIG_PACKAGE_luci-app-softethervpn is not set
 CONFIG_PACKAGE_luci-app-ssr-libev-server=y
 CONFIG_PACKAGE_luci-app-haproxy-tcp=y
 CONFIG_PACKAGE_luci-app-webadmin=y
@@ -144,6 +156,8 @@ CONFIG_PACKAGE_luci-app-wireguard=y
 CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
+CONFIG_PACKAGE_luci-app-airplay2=y
+CONFIG_PACKAGE_luci-app-usb-printer=y
 EOF
 
 # LuCI主题:
@@ -161,6 +175,7 @@ CONFIG_PACKAGE_screen=y
 CONFIG_PACKAGE_tree=y
 CONFIG_PACKAGE_vim-fuller=y
 CONFIG_PACKAGE_wget=y
+CONFIG_PACKAGE_bind-dig=y
 EOF
 
 # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
