@@ -156,6 +156,7 @@ CONFIG_PACKAGE_luci-app-wrtbwmon=y
 CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-hd-idle=y
 CONFIG_PACKAGE_luci-app-airplay2=y
+CONFIG_PACKAGE_luci-app-samba4=y
 EOF
 
 # LuCI主题:
