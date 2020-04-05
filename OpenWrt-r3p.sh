@@ -132,6 +132,12 @@ CONFIG_PACKAGE_luci-app-unblockmusic=y
 CONFIG_UnblockNeteaseMusic_Go=y
 EOF
 
+#证书自签ACME certs
+cat >> .config <<EOF
+CONFIG_PACKAGE_luci-app-acme=y
+CONFIG_PACKAGE_acme-dnsapi=y
+EOF
+
 # 常用LuCI插件选择:
 cat >> .config <<EOF
 CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
