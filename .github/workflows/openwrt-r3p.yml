@@ -75,7 +75,7 @@ jobs:
           sudo -E apt-get clean -y
     - name: 克隆源代码
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
-      name: 克隆helloworld
+    - name: 克隆helloworld
       run: cd openwrt && sed -i 's/\#src-git helloworld/\src-git helloworld/g' ./feeds.conf.default
 
     - name: 更新源
